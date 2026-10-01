@@ -1,134 +1,161 @@
-/* 1. Reset & box-sizing */
-* {
+/* 1. Reset and base styles */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
-
+ 
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #222;
   line-height: 1.6;
-  background-color: #f4f4f9;
-  color: #333;
 }
-
-/* 2. Header styles */
+ 
+/* 2. Header */
 header {
-  background-color: #2c3e50;
+  background-color: #8e0000;
   color: white;
-  padding: 24px 16px;
   text-align: center;
+  padding: 24px 16px 16px;
 }
-
-/* 3. Nav - Flexbox row, centred, 16px gap, white, no underline, hover */
+ 
+header h1 {
+  margin: 0;
+}
+ 
+/* 3. Navigation with Flexbox */
 nav {
   display: flex;
   justify-content: center;
   gap: 16px;
   margin-top: 12px;
 }
-
+ 
 nav a {
   color: white;
   text-decoration: none;
-  padding: 6px 10px;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
 }
-
+ 
 nav a:hover {
-  background-color: white;
-  color: #2c3e50;
+  background-color: rgba(255, 255, 255, 0.2);
 }
-
-/* 4. Centered main with max-width, sections as white cards */
+ 
+/* 4. Main content and section cards */
 main {
-  max-width: 900px;
+  max-width: 760px;
   margin: 24px auto;
   padding: 0 16px;
 }
-
+ 
 section {
   background: white;
   padding: 20px;
+  border-radius: 10px;
   margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
-
-/* 5. Features list - Grid responsive cards */
+ 
+h2,
+h3 {
+  color: #8e0000;
+  margin-top: 0;
+}
+ 
+/* 5. Features as a responsive grid of cards */
 .features {
   list-style: none;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 16px;
+  gap: 12px;
 }
-
+ 
 .features li {
-  background: #eef2ff;
-  border: 1px solid #c7d2fe;
-  padding: 16px;
+  background-color: #e6f6f1;
+  border-left: 4px solid #0ba184;
+  padding: 12px;
   border-radius: 6px;
-  text-align: center;
 }
-
-/* 6. Table styles */
+ 
+/* 6. Shortcuts table */
 table {
   width: 100%;
-  border-collapse: collapse;
-  margin-top: 12px;
+  border-collapse: collapse; /* merge double borders into one */
 }
-
-th, td {
-  border: 1px solid #ccc;
-  padding: 10px;
+ 
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px 12px;
   text-align: left;
 }
-
+ 
 th {
   background-color: #f0f0f0;
 }
-
-/* 7. Form - stacked vertical full width */
+ 
+/* 7. Forms */
 form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 6px;
 }
-
-input, textarea, select {
+ 
+input,
+textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 6px;
+  font: inherit; /* use the page font instead of the browser default */
 }
-
+ 
+input:focus,
+textarea:focus {
+  outline: 2px solid #0ba184;
+  border-color: #0ba184;
+}
+ 
 button {
-  padding: 10px 16px;
-  background-color: #2c3e50;
+  align-self: flex-start;
+  background-color: #0ba184;
   color: white;
   border: none;
-  border-radius: 4px;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
-
+ 
 button:hover {
-  background-color: #1a252f;
+  background-color: #088a70;
   transform: translateY(-2px);
 }
-
-/* 8. Media query - required */
+ 
+/* 8. Footer */
+footer {
+  text-align: center;
+  color: #777;
+  padding: 16px;
+}
+ 
+/* 9. Small screens */
 @media (max-width: 600px) {
   header {
-    font-size: 0.9rem;
-    padding: 16px 12px;
+    padding: 16px 12px 12px;
   }
-  nav {
-    flex-direction: column;
-    align-items: center;
+ 
+  header h1 {
+    font-size: 1.6rem;
   }
-  main {
-    padding: 0 12px;
+ 
+  section {
+    padding: 16px;
   }
 }
