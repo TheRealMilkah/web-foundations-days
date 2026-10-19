@@ -1,0 +1,7 @@
+# Day 8 Capstone Reflection
+
+The most difficult concept in this course was preventing two people from buying the same seat at the same time. I initially understood that the application should check whether a seat was available, but I learned that checking alone is not enough. Two requests can arrive almost simultaneously and both see the seat as available. I overcame this by learning about atomic database updates, transactions, row locking, and unique constraints. These mechanisms allow the database to decide which reservation succeeds and prevent another request from claiming the same seat.
+
+For my TicketHub capstone, I would improve the traffic estimates and test the design under a simulated popular ticket sale. The calculations give a useful starting point, but real traffic can arrive in uneven bursts, and browsing requests differ from checkout requests. Testing would help identify database bottlenecks and show whether the waiting room and application servers can handle the expected load. I would also review the design against feedback from my earlier capstone and use any specific comments to guide improvements.
+
+Next, I want to learn more about database transactions and isolation levels, distributed systems, and load testing. I would like to build a small version of the ticket reservation flow and test what happens when multiple users try to reserve the same seat. This would help me connect system design concepts to actual application behavior and make better decisions when designing reliable systems.
